@@ -1,0 +1,10 @@
+{
+  "mundo-um": {
+    "difficulty": "normal",
+    "pvp": "false"
+  },
+  "mundo-dois": {
+    "difficulty": "hard",
+    "pvp": "true"
+  }
+}

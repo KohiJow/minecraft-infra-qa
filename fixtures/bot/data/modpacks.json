@@ -1,0 +1,12 @@
+{
+  "mundo-um": {
+    "obrigatorio": false,
+    "link": null,
+    "nota": "Entra direto, sem instalar nada."
+  },
+  "mundo-dois": {
+    "obrigatorio": true,
+    "link": "http://127.0.0.1:25580/pacote.zip",
+    "nota": "Baixe o pacote e cole na pasta de mods."
+  }
+}
