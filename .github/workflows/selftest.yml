@@ -1,0 +1,91 @@
+name: suite
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  suite:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.9", "3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Suite contra fixtures
+        env:
+          QA_CI: "1"
+          QA_SERVER_DIR: fixtures/servidor
+          QA_BOT_DIR: fixtures/bot
+          QA_PUBLIC_DIR: fixtures/servidor/public
+        run: python -m unittest discover -s suite/checks -t . -v
+
+      - name: A suite ainda detecta os defeitos conhecidos
+        run: python -m unittest suite.checks.test_meta -v
+
+      - name: Privacidade - nenhum segredo versionado
+        run: python -m unittest suite.checks.test_security -v
+
+      - name: Relatorio compila
+        env:
+          QA_CI: "1"
+          QA_SERVER_DIR: fixtures/servidor
+          QA_BOT_DIR: fixtures/bot
+        run: python suite/runner.py --sem-publicar
+
+  robot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar Robot Framework
+        run: pip install --quiet robotframework
+
+      - name: Suite Robot (contra fixtures)
+        env:
+          QA_CI: "1"
+          QA_SERVER_DIR: fixtures/servidor
+          QA_BOT_DIR: fixtures/bot
+          QA_PUBLIC_DIR: fixtures/servidor/public
+        run: robot --outputdir robot/results --include privacidade robot/
+
+      - name: Publicar relatorio do Robot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-report
+          path: robot/results/
+
+  api:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar Playwright e pytest
+        run: pip install --quiet pytest playwright
+
+      - name: Subir a API localmente
+        run: |
+          mkdir -p /tmp/publico
+          cp -r fixtures/servidor/public/* /tmp/publico/ 2>/dev/null || true
+          echo '{}' > /tmp/publico/.api-worlds.json
+          python -m http.server 25580 --directory /tmp/publico &
+          sleep 2
+
+      - name: Contrato da API responde
+        run: |
+          curl -sf http://127.0.0.1:25580/ -o /dev/null
+          echo "servidor de arquivos no ar (contrato completo roda no servidor real)"

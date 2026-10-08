@@ -1,0 +1,11 @@
+# Ambiente concreto da máquina: contém caminhos e nomes de unidade reais
+qa.local.env
+
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# Relatorios do Robot Framework: contem caminhos reais da maquina.
+# No CI sao publicados como artefato, nunca comitados.
+robot/results/
