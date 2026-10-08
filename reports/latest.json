@@ -1,11 +1,10 @@
 {
-  "gerado_em": "2026-10-08T17:40:44",
-  "duracao_s": 3.19,
+  "gerado_em": "2026-10-08T18:10:49",
+  "duracao_s": 3.17,
   "host": "servidor-de-jogos",
   "total": 41,
   "resumo": {
-    "passou": 40,
-    "pulado": 1
+    "passou": 41
   },
   "saudavel": true,
   "por_modulo": {
@@ -34,10 +33,10 @@
       "pulado": 0
     },
     "test_security": {
-      "passou": 9,
+      "passou": 10,
       "falhou": 0,
       "erro": 0,
-      "pulado": 1
+      "pulado": 0
     },
     "test_services": {
       "passou": 7,
@@ -68,7 +67,7 @@
       "teste": "test_backup_contem_dados_de_jogador",
       "descricao": "Backup sem playerdata não protege o progresso de ninguém.",
       "estado": "passou",
-      "ms": 2745.3,
+      "ms": 2715.7,
       "detalhe": ""
     },
     {
@@ -104,7 +103,7 @@
       "teste": "test_codigo_compila",
       "descricao": "",
       "estado": "passou",
-      "ms": 69.9,
+      "ms": 67.9,
       "detalhe": ""
     },
     {
@@ -113,7 +112,7 @@
       "teste": "test_comandos_registram_em_producao",
       "descricao": "",
       "estado": "passou",
-      "ms": 42.6,
+      "ms": 42.5,
       "detalhe": ""
     },
     {
@@ -122,7 +121,7 @@
       "teste": "test_nada_definido_depois_do_entrypoint",
       "descricao": "DEFEITO REAL: comandos escritos depois de client.run() nunca",
       "estado": "passou",
-      "ms": 35.7,
+      "ms": 35.2,
       "detalhe": ""
     },
     {
@@ -131,7 +130,7 @@
       "teste": "test_sem_await_em_funcao_sincrona",
       "descricao": "DEFEITO REAL: `await` numa função que devolve bool quebrava o",
       "estado": "passou",
-      "ms": 133.6,
+      "ms": 140.8,
       "detalhe": ""
     },
     {
@@ -140,7 +139,7 @@
       "teste": "test_sem_segredo_escrito_no_codigo",
       "descricao": "Token tem de vir do ambiente, não do arquivo.",
       "estado": "passou",
-      "ms": 34.6,
+      "ms": 34.4,
       "detalhe": ""
     },
     {
@@ -149,7 +148,7 @@
       "teste": "test_indice_de_backups_publicado",
       "descricao": "",
       "estado": "passou",
-      "ms": 3.4,
+      "ms": 5.0,
       "detalhe": ""
     },
     {
@@ -158,7 +157,7 @@
       "teste": "test_pagina_explica_cada_mundo",
       "descricao": "Antes era listagem crua de diretório e ninguém sabia o que baixar.",
       "estado": "passou",
-      "ms": 1.2,
+      "ms": 1.4,
       "detalhe": ""
     },
     {
@@ -167,7 +166,7 @@
       "teste": "test_pagina_inicial_responde",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.9,
+      "ms": 1.2,
       "detalhe": ""
     },
     {
@@ -176,7 +175,7 @@
       "teste": "test_retomada_de_download",
       "descricao": "Range/206: sem isso, queda de internet recomeça o download.",
       "estado": "passou",
-      "ms": 1.1,
+      "ms": 1.4,
       "detalhe": ""
     },
     {
@@ -185,7 +184,7 @@
       "teste": "test_todos_os_pacotes_publicados_baixam",
       "descricao": "",
       "estado": "passou",
-      "ms": 3.9,
+      "ms": 4.2,
       "detalhe": ""
     },
     {
@@ -194,7 +193,7 @@
       "teste": "test_codigo_correto_passa_limpo",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.5,
+      "ms": 0.6,
       "detalhe": ""
     },
     {
@@ -239,7 +238,7 @@
       "teste": "test_nenhum_arquivo_do_repositorio_contem_segredo",
       "descricao": "O teste que torna seguro publicar isto.",
       "estado": "passou",
-      "ms": 5.3,
+      "ms": 12.8,
       "detalhe": ""
     },
     {
@@ -247,9 +246,9 @@
       "classe": "TestPrivacidadeDoRelatorio",
       "teste": "test_relatorio_publicado_passa_pelo_sanitizador",
       "descricao": "",
-      "estado": "pulado",
-      "ms": 0.1,
-      "detalhe": "ainda não há relatório"
+      "estado": "passou",
+      "ms": 1.6,
+      "detalhe": ""
     },
     {
       "modulo": "test_security",
@@ -257,7 +256,7 @@
       "teste": "test_sanitizador_cobre_cada_classe_de_segredo",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.4,
+      "ms": 0.7,
       "detalhe": ""
     },
     {
@@ -275,7 +274,7 @@
       "teste": "test_backup_de_mundo_nao_vai_para_nuvem_de_terceiros",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.2,
+      "ms": 0.3,
       "detalhe": ""
     },
     {
@@ -284,7 +283,7 @@
       "teste": "test_modo_offline_tem_autenticacao_compensatoria",
       "descricao": "O grupo usa clientes não-originais, então online-mode fica false.",
       "estado": "passou",
-      "ms": 0.2,
+      "ms": 0.3,
       "detalhe": ""
     },
     {
@@ -320,7 +319,7 @@
       "teste": "test_exatamente_uma_instancia_de_jogo",
       "descricao": "As duas instâncias dividem a porta: nunca podem rodar juntas.",
       "estado": "passou",
-      "ms": 16.5,
+      "ms": 16.0,
       "detalhe": ""
     },
     {
@@ -329,7 +328,7 @@
       "teste": "test_exclusao_mutua_declarada_nos_dois_sentidos",
       "descricao": "Conflicts= precisa existir dos dois lados; só um lado não protege.",
       "estado": "passou",
-      "ms": 20.7,
+      "ms": 18.4,
       "detalhe": ""
     },
     {
@@ -338,7 +337,7 @@
       "teste": "test_limite_de_memoria_preservado",
       "descricao": "Regressão real: apagar um drop-in removeu o MemoryHigh sem aviso.",
       "estado": "passou",
-      "ms": 9.0,
+      "ms": 9.7,
       "detalhe": ""
     },
     {
@@ -356,7 +355,7 @@
       "teste": "test_servicos_de_apoio_ativos",
       "descricao": "Bot e servidor de downloads precisam estar sempre no ar.",
       "estado": "passou",
-      "ms": 16.5,
+      "ms": 16.3,
       "detalhe": ""
     },
     {
@@ -365,7 +364,7 @@
       "teste": "test_timer_de_backup_armado",
       "descricao": "",
       "estado": "passou",
-      "ms": 8.0,
+      "ms": 8.4,
       "detalhe": ""
     },
     {
@@ -374,7 +373,7 @@
       "teste": "test_conjunto_mapeado_existe_no_disco",
       "descricao": "",
       "estado": "passou",
-      "ms": 1.3,
+      "ms": 1.0,
       "detalhe": ""
     },
     {
@@ -383,7 +382,7 @@
       "teste": "test_molde_existe_para_mundo_resetavel",
       "descricao": "Mundos de partida precisam poder voltar ao estado inicial.",
       "estado": "passou",
-      "ms": 0.6,
+      "ms": 0.5,
       "detalhe": ""
     },
     {
@@ -392,7 +391,7 @@
       "teste": "test_nenhuma_configuracao_aponta_para_mundo_inexistente",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.6,
+      "ms": 0.5,
       "detalhe": ""
     },
     {
@@ -401,7 +400,7 @@
       "teste": "test_todo_mundo_tem_ajustes_proprios",
       "descricao": "difficulty/pvp são globais no server.properties: sem ajuste por",
       "estado": "passou",
-      "ms": 0.6,
+      "ms": 0.4,
       "detalhe": ""
     },
     {
@@ -410,7 +409,7 @@
       "teste": "test_todo_mundo_tem_conjunto_de_mods_mapeado",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.8,
+      "ms": 0.5,
       "detalhe": ""
     },
     {
@@ -419,7 +418,7 @@
       "teste": "test_todo_mundo_tem_instrucao_de_instalacao",
       "descricao": "O jogador precisa saber o que baixar para cada mundo.",
       "estado": "passou",
-      "ms": 0.6,
+      "ms": 0.5,
       "detalhe": ""
     }
   ]

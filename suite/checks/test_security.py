@@ -13,7 +13,8 @@ from suite import config
 from suite.base import CasoBase
 from suite.sanitize import Sanitizador
 
-RAIZ_REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# tres niveis: checks -> suite -> raiz do repositorio
+RAIZ_REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Padrões que jamais podem aparecer em arquivo publicado
 PROIBIDOS = [

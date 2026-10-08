@@ -79,21 +79,24 @@ def montar():
            f'font-family="system-ui,sans-serif">{"no ar" if no_ar else "desligado"}</text>']
 
     out.append('  <g font-family="system-ui,-apple-system,Segoe UI,sans-serif">')
-    larg, gap, x0, y0, alt = 196, 16, 28, 86, 96
+    larg, gap, x0, y0, alt = 192, 15, 28, 86, 96
+    jog = st.get("jogadores_online")
+    vagas = st.get("vagas") or 0
     out.append(_cartao(x0, y0, larg, alt, "servidor",
                        st.get("mundo") or "-",
                        f"Minecraft {st.get('versao_jogo') or '-'}",
                        VERDE if no_ar else FRACO))
-    out.append(_cartao(x0 + (larg+gap), y0, larg, alt, "suite de qualidade",
+    out.append(_cartao(x0 + (larg+gap), y0, larg, alt, "jogando agora",
+                       f"{jog}" if jog is not None else "-",
+                       f"de {vagas} vagas" if vagas else "servidor desligado",
+                       VERDE if (jog or 0) > 0 else FRACO))
+    out.append(_cartao(x0 + 2*(larg+gap), y0, larg, alt, "suite",
                        f"{passou}/{total}" if total else "-",
                        "nenhuma falha" if saudavel else f"{quebrados} com falha",
                        VERDE if saudavel else VERMELHO))
-    out.append(_cartao(x0 + 2*(larg+gap), y0, larg, alt, "mundos",
+    out.append(_cartao(x0 + 3*(larg+gap), y0, larg, alt, "mundos",
                        str(mundos.get("total", 0)),
-                       "pacotes publicados", ACENTO))
-    out.append(_cartao(x0 + 3*(larg+gap), y0, larg, alt, "backups",
-                       str(backups.get("total", 0)),
-                       f"{gb:.1f} GB guardados", AMBAR))
+                       f"{backups.get('total',0)} backups, {gb:.1f} GB", ACENTO))
 
     # faixa com os mundos
     y = y0 + alt + 22
