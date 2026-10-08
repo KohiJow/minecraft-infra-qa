@@ -1,0 +1,55 @@
+{
+  "gerado_em": "2026-10-08T17:40:44",
+  "duracao_s": 3.19,
+  "host": "servidor-de-jogos",
+  "total": 41,
+  "resumo": {
+    "passou": 40,
+    "pulado": 1
+  },
+  "saudavel": true,
+  "por_modulo": {
+    "test_backups": {
+      "passou": 5,
+      "falhou": 0,
+      "erro": 0,
+      "pulado": 0
+    },
+    "test_bot_code": {
+      "passou": 5,
+      "falhou": 0,
+      "erro": 0,
+      "pulado": 0
+    },
+    "test_http": {
+      "passou": 5,
+      "falhou": 0,
+      "erro": 0,
+      "pulado": 0
+    },
+    "test_meta": {
+      "passou": 3,
+      "falhou": 0,
+      "erro": 0,
+      "pulado": 0
+    },
+    "test_security": {
+      "passou": 9,
+      "falhou": 0,
+      "erro": 0,
+      "pulado": 1
+    },
+    "test_services": {
+      "passou": 7,
+      "falhou": 0,
+      "erro": 0,
+      "pulado": 0
+    },
+    "test_worlds": {
+      "passou": 6,
+      "falhou": 0,
+      "erro": 0,
+      "pulado": 0
+    }
+  }
+}
