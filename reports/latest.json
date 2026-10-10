@@ -1,6 +1,6 @@
 {
-  "gerado_em": "2026-10-09T04:34:12",
-  "duracao_s": 3.15,
+  "gerado_em": "2026-10-10T04:34:36",
+  "duracao_s": 4.96,
   "host": "servidor-de-jogos",
   "total": 41,
   "resumo": {
@@ -58,7 +58,7 @@
       "teste": "test_arquivos_nao_estao_corrompidos",
       "descricao": "Backup que não abre não é backup.",
       "estado": "passou",
-      "ms": 14.8,
+      "ms": 13.3,
       "detalhe": ""
     },
     {
@@ -67,7 +67,7 @@
       "teste": "test_backup_contem_dados_de_jogador",
       "descricao": "Backup sem playerdata não protege o progresso de ninguém.",
       "estado": "passou",
-      "ms": 2718.0,
+      "ms": 4518.8,
       "detalhe": ""
     },
     {
@@ -76,7 +76,7 @@
       "teste": "test_existe_backup_recente",
       "descricao": "Mais de 48h sem backup é falha operacional.",
       "estado": "passou",
-      "ms": 0.4,
+      "ms": 0.2,
       "detalhe": ""
     },
     {
@@ -85,7 +85,7 @@
       "teste": "test_indice_publicado_e_atual",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.2,
+      "ms": 1.2,
       "detalhe": ""
     },
     {
@@ -103,7 +103,7 @@
       "teste": "test_codigo_compila",
       "descricao": "",
       "estado": "passou",
-      "ms": 66.7,
+      "ms": 67.0,
       "detalhe": ""
     },
     {
@@ -112,7 +112,7 @@
       "teste": "test_comandos_registram_em_producao",
       "descricao": "",
       "estado": "passou",
-      "ms": 38.9,
+      "ms": 39.3,
       "detalhe": ""
     },
     {
@@ -121,7 +121,7 @@
       "teste": "test_nada_definido_depois_do_entrypoint",
       "descricao": "DEFEITO REAL: comandos escritos depois de client.run() nunca",
       "estado": "passou",
-      "ms": 31.9,
+      "ms": 32.6,
       "detalhe": ""
     },
     {
@@ -130,7 +130,7 @@
       "teste": "test_sem_await_em_funcao_sincrona",
       "descricao": "DEFEITO REAL: `await` numa função que devolve bool quebrava o",
       "estado": "passou",
-      "ms": 120.8,
+      "ms": 126.0,
       "detalhe": ""
     },
     {
@@ -139,7 +139,7 @@
       "teste": "test_sem_segredo_escrito_no_codigo",
       "descricao": "Token tem de vir do ambiente, não do arquivo.",
       "estado": "passou",
-      "ms": 31.9,
+      "ms": 33.6,
       "detalhe": ""
     },
     {
@@ -148,7 +148,7 @@
       "teste": "test_indice_de_backups_publicado",
       "descricao": "",
       "estado": "passou",
-      "ms": 4.1,
+      "ms": 3.6,
       "detalhe": ""
     },
     {
@@ -157,7 +157,7 @@
       "teste": "test_pagina_explica_cada_mundo",
       "descricao": "Antes era listagem crua de diretório e ninguém sabia o que baixar.",
       "estado": "passou",
-      "ms": 1.2,
+      "ms": 2.7,
       "detalhe": ""
     },
     {
@@ -166,7 +166,7 @@
       "teste": "test_pagina_inicial_responde",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.9,
+      "ms": 1.0,
       "detalhe": ""
     },
     {
@@ -175,7 +175,7 @@
       "teste": "test_retomada_de_download",
       "descricao": "Range/206: sem isso, queda de internet recomeça o download.",
       "estado": "passou",
-      "ms": 2.4,
+      "ms": 1.9,
       "detalhe": ""
     },
     {
@@ -193,7 +193,7 @@
       "teste": "test_codigo_correto_passa_limpo",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.5,
+      "ms": 0.6,
       "detalhe": ""
     },
     {
@@ -202,7 +202,7 @@
       "teste": "test_acusa_await_em_funcao_sincrona",
       "descricao": "Incidente 3: await sobre função que devolve bool.",
       "estado": "passou",
-      "ms": 1.1,
+      "ms": 1.2,
       "detalhe": ""
     },
     {
@@ -220,7 +220,7 @@
       "teste": "test_ip_privado_e_preservado",
       "descricao": "Redigir 127.0.0.1 só atrapalharia a leitura do relatório.",
       "estado": "passou",
-      "ms": 1.9,
+      "ms": 0.7,
       "detalhe": ""
     },
     {
@@ -238,7 +238,7 @@
       "teste": "test_nenhum_arquivo_do_repositorio_contem_segredo",
       "descricao": "O teste que torna seguro publicar isto.",
       "estado": "passou",
-      "ms": 15.9,
+      "ms": 27.9,
       "detalhe": ""
     },
     {
@@ -256,7 +256,7 @@
       "teste": "test_sanitizador_cobre_cada_classe_de_segredo",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.5,
+      "ms": 0.4,
       "detalhe": ""
     },
     {
@@ -265,7 +265,7 @@
       "teste": "test_versao_nao_e_confundida_com_endereco",
       "descricao": "Regressão: a primeira versão do padrão de IP acusava \"5.0.2.517\",",
       "estado": "passou",
-      "ms": 0.3,
+      "ms": 0.2,
       "detalhe": ""
     },
     {
@@ -274,7 +274,7 @@
       "teste": "test_backup_de_mundo_nao_vai_para_nuvem_de_terceiros",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.4,
+      "ms": 1.0,
       "detalhe": ""
     },
     {
@@ -283,7 +283,7 @@
       "teste": "test_modo_offline_tem_autenticacao_compensatoria",
       "descricao": "O grupo usa clientes não-originais, então online-mode fica false.",
       "estado": "passou",
-      "ms": 0.8,
+      "ms": 0.3,
       "detalhe": ""
     },
     {
@@ -319,7 +319,7 @@
       "teste": "test_exatamente_uma_instancia_de_jogo",
       "descricao": "As duas instâncias dividem a porta: nunca podem rodar juntas.",
       "estado": "passou",
-      "ms": 16.8,
+      "ms": 14.7,
       "detalhe": ""
     },
     {
@@ -328,7 +328,7 @@
       "teste": "test_exclusao_mutua_declarada_nos_dois_sentidos",
       "descricao": "Conflicts= precisa existir dos dois lados; só um lado não protege.",
       "estado": "passou",
-      "ms": 17.3,
+      "ms": 16.7,
       "detalhe": ""
     },
     {
@@ -337,7 +337,7 @@
       "teste": "test_limite_de_memoria_preservado",
       "descricao": "Regressão real: apagar um drop-in removeu o MemoryHigh sem aviso.",
       "estado": "passou",
-      "ms": 8.7,
+      "ms": 8.1,
       "detalhe": ""
     },
     {
@@ -355,7 +355,7 @@
       "teste": "test_servicos_de_apoio_ativos",
       "descricao": "Bot e servidor de downloads precisam estar sempre no ar.",
       "estado": "passou",
-      "ms": 14.6,
+      "ms": 13.5,
       "detalhe": ""
     },
     {
@@ -364,7 +364,7 @@
       "teste": "test_timer_de_backup_armado",
       "descricao": "",
       "estado": "passou",
-      "ms": 7.3,
+      "ms": 7.2,
       "detalhe": ""
     },
     {
@@ -373,7 +373,7 @@
       "teste": "test_conjunto_mapeado_existe_no_disco",
       "descricao": "",
       "estado": "passou",
-      "ms": 1.2,
+      "ms": 1.0,
       "detalhe": ""
     },
     {
@@ -400,7 +400,7 @@
       "teste": "test_todo_mundo_tem_ajustes_proprios",
       "descricao": "difficulty/pvp são globais no server.properties: sem ajuste por",
       "estado": "passou",
-      "ms": 0.4,
+      "ms": 0.5,
       "detalhe": ""
     },
     {

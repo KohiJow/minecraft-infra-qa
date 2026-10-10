@@ -27,7 +27,7 @@
     <rect x="649" y="86" width="192" height="96" rx="8" fill="#161b22" stroke="#30363d"/>
     <text x="665" y="110" font-size="11" fill="#8b949e" letter-spacing="1.2">MUNDOS</text>
     <text x="665" y="142" font-size="25" font-weight="600" fill="#58a6ff">5</text>
-    <text x="665" y="164" font-size="12" fill="#8b949e">9 backups, 15.3 GB</text>
+    <text x="665" y="164" font-size="12" fill="#8b949e">10 backups, 15.8 GB</text>
   </g>
   <text x="28" y="204" font-size="11" fill="#8b949e" letter-spacing="1.2">MUNDOS DISPONIVEIS</text>
     <rect x="28" y="216" width="99" height="26" rx="13" fill="#161b22" stroke="#d29922" stroke-opacity="0.5"/>
@@ -46,6 +46,6 @@
     <circle cx="407.8" cy="229" r="3.5" fill="#d29922"/>
     <text x="417.8" y="233" font-size="12" fill="#e6edf3">world</text>
   <text x="28" y="264" font-size="11" fill="#8b949e">verde = entra sem instalar nada | ambar = precisa do pacote de mods</text>
-  <text x="832" y="264" text-anchor="end" font-size="11" fill="#8b949e">atualizado em 09/10/2026 04:34</text>
+  <text x="832" y="264" text-anchor="end" font-size="11" fill="#8b949e">atualizado em 10/10/2026 04:34</text>
   </g>
 </svg>
