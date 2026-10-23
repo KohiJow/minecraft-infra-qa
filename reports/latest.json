@@ -1,6 +1,6 @@
 {
-  "gerado_em": "2026-10-22T04:31:08",
-  "duracao_s": 44.28,
+  "gerado_em": "2026-10-23T04:36:39",
+  "duracao_s": 36.89,
   "host": "servidor-de-jogos",
   "total": 41,
   "resumo": {
@@ -58,7 +58,7 @@
       "teste": "test_arquivos_nao_estao_corrompidos",
       "descricao": "Backup que não abre não é backup.",
       "estado": "passou",
-      "ms": 13.0,
+      "ms": 12.5,
       "detalhe": ""
     },
     {
@@ -67,7 +67,7 @@
       "teste": "test_backup_contem_dados_de_jogador",
       "descricao": "Backup sem playerdata não protege o progresso de ninguém.",
       "estado": "passou",
-      "ms": 43819.3,
+      "ms": 36425.3,
       "detalhe": ""
     },
     {
@@ -76,7 +76,7 @@
       "teste": "test_existe_backup_recente",
       "descricao": "Mais de 48h sem backup é falha operacional.",
       "estado": "passou",
-      "ms": 0.3,
+      "ms": 0.4,
       "detalhe": ""
     },
     {
@@ -103,7 +103,7 @@
       "teste": "test_codigo_compila",
       "descricao": "",
       "estado": "passou",
-      "ms": 66.6,
+      "ms": 67.4,
       "detalhe": ""
     },
     {
@@ -112,7 +112,7 @@
       "teste": "test_comandos_registram_em_producao",
       "descricao": "",
       "estado": "passou",
-      "ms": 39.7,
+      "ms": 38.9,
       "detalhe": ""
     },
     {
@@ -121,7 +121,7 @@
       "teste": "test_nada_definido_depois_do_entrypoint",
       "descricao": "DEFEITO REAL: comandos escritos depois de client.run() nunca",
       "estado": "passou",
-      "ms": 33.9,
+      "ms": 33.1,
       "detalhe": ""
     },
     {
@@ -130,7 +130,7 @@
       "teste": "test_sem_await_em_funcao_sincrona",
       "descricao": "DEFEITO REAL: `await` numa função que devolve bool quebrava o",
       "estado": "passou",
-      "ms": 129.7,
+      "ms": 133.6,
       "detalhe": ""
     },
     {
@@ -148,7 +148,7 @@
       "teste": "test_indice_de_backups_publicado",
       "descricao": "",
       "estado": "passou",
-      "ms": 4.0,
+      "ms": 4.4,
       "detalhe": ""
     },
     {
@@ -157,7 +157,7 @@
       "teste": "test_pagina_explica_cada_mundo",
       "descricao": "Antes era listagem crua de diretório e ninguém sabia o que baixar.",
       "estado": "passou",
-      "ms": 1.3,
+      "ms": 1.5,
       "detalhe": ""
     },
     {
@@ -184,7 +184,7 @@
       "teste": "test_todos_os_pacotes_publicados_baixam",
       "descricao": "",
       "estado": "passou",
-      "ms": 3.9,
+      "ms": 4.1,
       "detalhe": ""
     },
     {
@@ -193,7 +193,7 @@
       "teste": "test_codigo_correto_passa_limpo",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.5,
+      "ms": 0.6,
       "detalhe": ""
     },
     {
@@ -238,7 +238,7 @@
       "teste": "test_nenhum_arquivo_do_repositorio_contem_segredo",
       "descricao": "O teste que torna seguro publicar isto.",
       "estado": "passou",
-      "ms": 22.8,
+      "ms": 22.7,
       "detalhe": ""
     },
     {
@@ -256,7 +256,7 @@
       "teste": "test_sanitizador_cobre_cada_classe_de_segredo",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.5,
+      "ms": 0.4,
       "detalhe": ""
     },
     {
@@ -265,7 +265,7 @@
       "teste": "test_versao_nao_e_confundida_com_endereco",
       "descricao": "Regressão: a primeira versão do padrão de IP acusava \"5.0.2.517\",",
       "estado": "passou",
-      "ms": 0.3,
+      "ms": 0.2,
       "detalhe": ""
     },
     {
@@ -274,7 +274,7 @@
       "teste": "test_backup_de_mundo_nao_vai_para_nuvem_de_terceiros",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.5,
+      "ms": 0.4,
       "detalhe": ""
     },
     {
@@ -292,7 +292,7 @@
       "teste": "test_pasta_publica_nao_expoe_dado_de_jogador",
       "descricao": "Só pacote de mods e backup podem estar publicados por HTTP.",
       "estado": "passou",
-      "ms": 0.2,
+      "ms": 0.3,
       "detalhe": ""
     },
     {
@@ -319,7 +319,7 @@
       "teste": "test_exatamente_uma_instancia_de_jogo",
       "descricao": "As duas instâncias dividem a porta: nunca podem rodar juntas.",
       "estado": "passou",
-      "ms": 18.1,
+      "ms": 18.7,
       "detalhe": ""
     },
     {
@@ -328,7 +328,7 @@
       "teste": "test_exclusao_mutua_declarada_nos_dois_sentidos",
       "descricao": "Conflicts= precisa existir dos dois lados; só um lado não protege.",
       "estado": "passou",
-      "ms": 24.8,
+      "ms": 22.2,
       "detalhe": ""
     },
     {
@@ -337,7 +337,7 @@
       "teste": "test_limite_de_memoria_preservado",
       "descricao": "Regressão real: apagar um drop-in removeu o MemoryHigh sem aviso.",
       "estado": "passou",
-      "ms": 9.9,
+      "ms": 9.7,
       "detalhe": ""
     },
     {
@@ -355,7 +355,7 @@
       "teste": "test_servicos_de_apoio_ativos",
       "descricao": "Bot e servidor de downloads precisam estar sempre no ar.",
       "estado": "passou",
-      "ms": 16.5,
+      "ms": 16.1,
       "detalhe": ""
     },
     {
@@ -364,7 +364,7 @@
       "teste": "test_timer_de_backup_armado",
       "descricao": "",
       "estado": "passou",
-      "ms": 7.5,
+      "ms": 8.1,
       "detalhe": ""
     },
     {
@@ -373,7 +373,7 @@
       "teste": "test_conjunto_mapeado_existe_no_disco",
       "descricao": "",
       "estado": "passou",
-      "ms": 2.9,
+      "ms": 2.7,
       "detalhe": ""
     },
     {
@@ -382,7 +382,7 @@
       "teste": "test_molde_existe_para_mundo_resetavel",
       "descricao": "Mundos de partida precisam poder voltar ao estado inicial.",
       "estado": "passou",
-      "ms": 0.5,
+      "ms": 0.6,
       "detalhe": ""
     },
     {
@@ -409,7 +409,7 @@
       "teste": "test_todo_mundo_tem_conjunto_de_mods_mapeado",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.5,
+      "ms": 0.4,
       "detalhe": ""
     },
     {
