@@ -1,4 +1,5 @@
-# Plataforma de servidores de jogo: QA de API, infraestrutura e CI/CD
+# Game server platform: API, infrastructure and CI/CD QA
+English | [Português](README.pt-BR.md)
 
 ![suite](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FKohiJow%2Fminecraft-infra-qa%2Fmain%2Freports%2Fbadge.json)
 ![CI](https://github.com/KohiJow/minecraft-infra-qa/actions/workflows/selftest.yml/badge.svg)
@@ -6,35 +7,36 @@
 ![playwright](https://img.shields.io/badge/Playwright-API%20testing-2EAD33)
 ![robot framework](https://img.shields.io/badge/Robot%20Framework-7.x-00C0B5)
 
-Sistema real em produção: dois servidores de jogo que disputam a mesma porta, um
-bot de operação, uma API de status e rotina de backup. Tudo coberto por uma
-**suite de qualidade que roda sozinha todo dia**, com o relatório publicado aqui.
+A real system in production: two game servers competing for the same port, an
+operations bot, a status API and a backup routine. All of it is covered by a
+**quality suite that runs on its own every day**, with the report published
+here.
 
-Cada verificação nasceu de um defeito que aconteceu de verdade. A causa raiz de
-cada um está em [`docs/incidents.md`](docs/incidents.md).
+Every check came from a defect that actually happened. The root cause of each
+one is in [`docs/incidents.md`](docs/incidents.md).
 
-[Último relatório](reports/latest.md) | [histórico diário](reports/history/)
+[Latest report](reports/latest.md) | [daily history](reports/history/)
 
 ---
 
-## Três camadas de teste
+## Three test layers
 
-| Camada | Ferramenta | O que cobre | Casos |
+| Layer | Tool | What it covers | Cases |
 |---|---|---|--:|
-| **API / contrato** | Playwright (`APIRequestContext`) + pytest | 3 endpoints JSON: status, catálogo de mundos, catálogo de backups, tipos, coerência entre campos, cabeçalhos de cache, 404, HEAD e **não vazamento de dado pessoal** | 11 |
-| **Infraestrutura e regressão** | `unittest` (zero dependências) | systemd, exclusão mútua, HTTP com `Range`, AST do bot, consistência de configuração, integridade de backup, segurança | 41 |
-| **Negócio** | Robot Framework | os mesmos cenários em linguagem legível por quem não lê Python | 9 |
+| **API / contract** | Playwright (`APIRequestContext`) + pytest | 3 JSON endpoints: status, world catalog, backup catalog, field types, coherence between fields, cache headers, 404, HEAD and **no leakage of personal data** | 11 |
+| **Infrastructure and regression** | `unittest` (zero dependencies) | systemd, mutual exclusion, HTTP with `Range`, the bot's AST, configuration consistency, backup integrity, security | 41 |
+| **Business** | Robot Framework | the same scenarios, in language readable by people who don't read Python | 9 |
 
-A camada do Robot **não duplica lógica**: a biblioteca de palavras-chave importa
-os mesmos helpers da suite em `unittest`. Uma fonte de verdade, três formas de
-expressar o caso de teste.
+The Robot layer **does not duplicate logic**: the keyword library imports the
+same helpers from the `unittest` suite. One source of truth, three ways to
+express the test case.
 
 ---
 
-## A API testada foi construída aqui
+## The API under test was built here
 
-O endpoint de status não existia. Foi escrito como parte deste trabalho, o que
-põe desenvolvimento e teste no mesmo projeto:
+The status endpoint did not exist. It was written as part of this work, which
+puts development and testing in the same project:
 
 ```http
 GET /api/status
@@ -48,58 +50,63 @@ GET /api/status
 }
 ```
 
-Uma restrição moldou o desenho: o serviço que expõe a API roda em sandbox
-(`ProtectHome`, `ProtectSystem=strict`) e **não alcança** o diretório de origem
-dos dados nem fala com o systemd. Em vez de afrouxar o sandbox, quem tem acesso
-publica um recorte já limpo, e o serviço público só lê arquivo. A instância viva
-é deduzida do horário do log, não de uma chamada privilegiada.
+One constraint shaped the design: the service that exposes the API runs in a
+sandbox (`ProtectHome`, `ProtectSystem=strict`) and **cannot reach** the data's
+source directory or talk to systemd. Instead of loosening the sandbox, the side
+that does have access publishes an extract that is already clean, and the
+public service only reads files. The running instance is inferred from the
+log's timestamp, not from a privileged call.
 
 ---
 
-## O que este projeto demonstra
+## What this project demonstrates
 
-| Área | Como aparece aqui |
+| Area | How it shows up here |
 |---|---|
-| Teste de API e backend | contrato de 3 endpoints JSON com Playwright: tipos, coerência, cabeçalhos, erros |
-| Automação de testes | 61 casos em três camadas, uma fonte de lógica |
-| CI/CD | GitHub Actions em 3 versões de Python, artefato de relatório, selo de estado |
-| Teste de infraestrutura | systemd, exclusão mútua entre serviços, limites de memória |
-| Teste de API/HTTP | status, cabeçalhos, suporte a `Range` (retomada de download) |
-| Análise estática | AST para pegar defeito que testes de importação não pegam |
-| Segurança e privacidade | sanitização obrigatória + teste que falha se vazar segredo |
-| Validação de dados | consistência entre três fontes de configuração |
-| Confiabilidade | integridade e rotação de backup, idade máxima |
-| Observabilidade | relatório diário em JSON e Markdown, histórico, selo |
-| Análise de causa raiz | [`docs/incidents.md`](docs/incidents.md), defeitos reais e o que mudou |
+| API and backend testing | contract tests for 3 JSON endpoints with Playwright: types, coherence, headers, errors |
+| Test automation | 61 cases in three layers, one source of logic |
+| CI/CD | GitHub Actions on 3 Python versions, report artifact, status badge |
+| Infrastructure testing | systemd, mutual exclusion between services, memory limits |
+| API/HTTP testing | status, headers, `Range` support (resuming downloads) |
+| Static analysis | AST to catch defects that import tests miss |
+| Security and privacy | mandatory sanitization + a test that fails if a secret leaks |
+| Data validation | consistency across three configuration sources |
+| Reliability | backup integrity and rotation, maximum age |
+| Observability | daily report in JSON and Markdown, history, badge |
+| Root cause analysis | [`docs/incidents.md`](docs/incidents.md), real defects and what changed |
 
-## Por que cada teste existe
+## Why each test exists
 
-A suite não testa o óbvio: cada verificação nasceu de **um incidente real**.
+The suite does not test the obvious: every check came from **a real incident**.
 
-- **Duas instâncias, uma porta.** Se as duas subirem juntas, uma falha e os
-  jogadores caem. O teste exige `Conflicts=` declarado nos dois sentidos, porque
-  um lado só não protege.
-- **Retomada de download.** Um pacote de 720 MB sem `Range` faz quem tem
-  internet ruim recomeçar do zero. O teste pede um trecho e exige `206`.
-- **Código inalcançável.** Funções escritas depois do *entrypoint* registram sob
-  `import` mas **não** em produção. O teste de importação passava e o usuário via
-  o comando não responder. Hoje é um teste de AST.
-- **Backup em nuvem de terceiro.** Estourou a cota e falhou em silêncio por
-  dias. O teste proíbe o destino externo e verifica integridade do arquivo.
-- **Whitelist desligada sozinha.** O jogo regerou o arquivo de configuração e
-  voltou ao padrão aberto, com o servidor já escutando. Virou teste.
+- **Two instances, one port.** If both start together, one fails and the
+  players get disconnected. The test requires `Conflicts=` declared in both
+  directions, because one side alone gives no protection.
+- **Resuming downloads.** Without `Range`, a 720 MB package makes anyone with a
+  bad connection start over from scratch. The test requests a chunk and
+  requires `206`.
+- **Unreachable code.** Functions written after the *entrypoint* get registered
+  under `import` but **not** in production. The import test passed, and the
+  user got no response from the command. Now it is an AST test.
+- **Backup to a third-party cloud.** It went over quota and failed silently for
+  days. The test forbids the external destination and checks the file's
+  integrity.
+- **Whitelist switched itself off.** The game regenerated the configuration
+  file and went back to the open default, with the server already listening.
+  That became a test.
 
-Detalhe de cada um em [`docs/incidents.md`](docs/incidents.md).
+Details on each one in [`docs/incidents.md`](docs/incidents.md).
 
-## Duas camadas sobre a mesma lógica
+## Two layers on top of the same logic
 
-O núcleo em `unittest` não tem dependência nenhuma. Roda na própria máquina do
-servidor, que não tem ambiente de desenvolvimento, sem precisar de `pip install`.
+The `unittest` core has no dependencies at all. It runs on the server machine
+itself, which has no development environment, without needing `pip install`.
 
-Por cima dele há uma camada em **Robot Framework**, para os casos que precisam
-ser lidos por quem não lê Python. A biblioteca de palavras-chave
-(`robot/resources/PlataformaLibrary.py`) **importa os mesmos helpers** da suite:
-não existe lógica duplicada, só uma segunda forma de expressar o caso de teste.
+On top of it there is a **Robot Framework** layer, for the cases that need to
+be read by people who don't read Python. The keyword library
+(`robot/resources/PlataformaLibrary.py`) **imports the same helpers** from the
+suite: there is no duplicated logic, just a second way to express the test
+case.
 
 ```robot
 Apenas uma instancia de jogo por vez
@@ -108,7 +115,7 @@ Apenas uma instancia de jogo por vez
     ${ativas}=    Deve Haver No Maximo Uma Instancia De Jogo
 ```
 
-## Como rodar
+## How to run
 
 ```bash
 git clone https://github.com/KohiJow/minecraft-infra-qa
@@ -126,14 +133,14 @@ robot --outputdir robot/results robot/
 python3 suite/runner.py
 ```
 
-> Os relatórios HTML do Robot ficam fora do versionamento de propósito: eles
-> registram os caminhos reais da máquina. No CI saem como artefato.
+> The Robot HTML reports are kept out of version control on purpose: they
+> record the machine's real paths. In CI they come out as an artifact.
 
-## Execução diária
+## Daily run
 
-Um *timer* do systemd roda a suite de madrugada, grava o relatório e faz commit
-do resultado. Falha vira notificação. Instalação em
-[`scripts/install-timer.sh`](scripts/install-timer.sh).
+A systemd *timer* runs the suite in the early hours of the morning, writes the
+report and commits the result. A failure turns into a notification.
+Installation: [`scripts/install-timer.sh`](scripts/install-timer.sh).
 
 ```
 suite/runner.py ─> reports/latest.json   (dados)
@@ -142,7 +149,7 @@ suite/runner.py ─> reports/latest.json   (dados)
                 ─> reports/history/      (série diária)
 ```
 
-## Estrutura
+## Structure
 
 ```
 suite/
@@ -155,16 +162,17 @@ docs/              arquitetura, incidentes, runbook
 reports/           resultados publicados
 ```
 
-## Privacidade
+## Privacy
 
-O que **nunca** sai daqui: endereço do servidor, token e webhooks do bot, nomes
-e identificadores de jogadores, hashes de senha, caminhos com nome de usuário.
+What **never** gets out of here: the server address, the bot's token and
+webhooks, player names and identifiers, password hashes, paths that contain a
+username.
 
-Como isso é garantido, e não só prometido:
+How this is guaranteed, and not just promised:
 
-1. A lista de segredos é montada **em tempo de execução** a partir do próprio
-   servidor e nunca é gravada em disco.
-2. Todo relatório passa pelo sanitizador antes de ser escrito.
-3. `test_security.py` varre **todo arquivo do repositório** procurando os
-   padrões proibidos e **falha** se achar algum. O teste roda junto com os
-   outros, todo dia.
+1. The list of secrets is built **at runtime** from the server itself and is
+   never written to disk.
+2. Every report goes through the sanitizer before it is written.
+3. `test_security.py` scans **every file in the repository** for the forbidden
+   patterns and **fails** if it finds any. The test runs along with the
+   others, every day.
