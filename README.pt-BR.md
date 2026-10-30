@@ -22,7 +22,7 @@ cada um está em [`docs/incidents.md`](docs/incidents.md).
 
 | Camada | Ferramenta | O que cobre | Casos |
 |---|---|---|--:|
-| **API / contrato** | Playwright (`APIRequestContext`) + pytest | 3 endpoints JSON: status, catálogo de mundos, catálogo de backups, tipos, coerência entre campos, cabeçalhos de cache, 404, HEAD e **não vazamento de dado pessoal** | 11 |
+| **API / contrato** | Playwright (`APIRequestContext`) + pytest | 3 endpoints JSON: status, catálogo de mundos, catálogo de backups, tipos, coerência entre campos, cabeçalhos de cache, 404, HEAD e **não vazamento de dado pessoal** | 12 |
 | **Infraestrutura e regressão** | `unittest` (zero dependências) | systemd, exclusão mútua, HTTP com `Range`, AST do bot, consistência de configuração, integridade de backup, segurança | 41 |
 | **Negócio** | Robot Framework | os mesmos cenários em linguagem legível por quem não lê Python | 9 |
 
@@ -62,7 +62,7 @@ publica um recorte já limpo, e o serviço público só lê arquivo. A instânci
 | Área | Como aparece aqui |
 |---|---|
 | Teste de API e backend | contrato de 3 endpoints JSON com Playwright: tipos, coerência, cabeçalhos, erros |
-| Automação de testes | 61 casos em três camadas, uma fonte de lógica |
+| Automação de testes | 62 casos em três camadas, uma fonte de lógica |
 | CI/CD | GitHub Actions em 3 versões de Python, artefato de relatório, selo de estado |
 | Teste de infraestrutura | systemd, exclusão mútua entre serviços, limites de memória |
 | Teste de API/HTTP | status, cabeçalhos, suporte a `Range` (retomada de download) |
@@ -151,7 +151,7 @@ suite/
   sanitize.py      redação de IP, UUID, e-mail, token, webhook, nomes
   base.py          utilidades (systemd, HTTP, JSON) e skip automático
   runner.py        execução + publicação do relatório
-  checks/          os seis módulos de verificação
+  checks/          os sete módulos de verificação
 docs/              arquitetura, incidentes, runbook
 reports/           resultados publicados
 ```

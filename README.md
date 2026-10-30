@@ -23,7 +23,7 @@ one is in [`docs/incidents.md`](docs/incidents.md).
 
 | Layer | Tool | What it covers | Cases |
 |---|---|---|--:|
-| **API / contract** | Playwright (`APIRequestContext`) + pytest | 3 JSON endpoints: status, world catalog, backup catalog, field types, coherence between fields, cache headers, 404, HEAD and **no leakage of personal data** | 11 |
+| **API / contract** | Playwright (`APIRequestContext`) + pytest | 3 JSON endpoints: status, world catalog, backup catalog, field types, coherence between fields, cache headers, 404, HEAD and **no leakage of personal data** | 12 |
 | **Infrastructure and regression** | `unittest` (zero dependencies) | systemd, mutual exclusion, HTTP with `Range`, the bot's AST, configuration consistency, backup integrity, security | 41 |
 | **Business** | Robot Framework | the same scenarios, in language readable by people who don't read Python | 9 |
 
@@ -64,7 +64,7 @@ log's timestamp, not from a privileged call.
 | Area | How it shows up here |
 |---|---|
 | API and backend testing | contract tests for 3 JSON endpoints with Playwright: types, coherence, headers, errors |
-| Test automation | 61 cases in three layers, one source of logic |
+| Test automation | 62 cases in three layers, one source of logic |
 | CI/CD | GitHub Actions on 3 Python versions, report artifact, status badge |
 | Infrastructure testing | systemd, mutual exclusion between services, memory limits |
 | API/HTTP testing | status, headers, `Range` support (resuming downloads) |
@@ -157,7 +157,7 @@ suite/
   sanitize.py      redação de IP, UUID, e-mail, token, webhook, nomes
   base.py          utilidades (systemd, HTTP, JSON) e skip automático
   runner.py        execução + publicação do relatório
-  checks/          os seis módulos de verificação
+  checks/          os sete módulos de verificação
 docs/              arquitetura, incidentes, runbook
 reports/           resultados publicados
 ```
