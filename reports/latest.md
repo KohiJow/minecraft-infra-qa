@@ -1,6 +1,6 @@
 # Relatório da suite
 
-**Saudável**. 41 verificações em 35.06s, em 2026-10-29T04:35:06.
+**Saudável**. 41 verificações em 35.25s, em 2026-10-30T04:33:48.
 
 | Módulo | ✅ | ❌ | 💥 | ⏭️ |
 |---|--:|--:|--:|--:|
@@ -16,22 +16,22 @@
 
 | | Verificação | O que garante | ms |
 |---|---|---|--:|
-| ✅ | `test_backups.test_arquivos_nao_estao_corrompidos` | Backup que não abre não é backup. | 18 |
-| ✅ | `test_backups.test_backup_contem_dados_de_jogador` | Backup sem playerdata não protege o progresso de ninguém. | 34618 |
+| ✅ | `test_backups.test_arquivos_nao_estao_corrompidos` | Backup que não abre não é backup. | 13 |
+| ✅ | `test_backups.test_backup_contem_dados_de_jogador` | Backup sem playerdata não protege o progresso de ninguém. | 34812 |
 | ✅ | `test_backups.test_existe_backup_recente` | Mais de 48h sem backup é falha operacional. | 0 |
 | ✅ | `test_backups.test_indice_publicado_e_atual` | - | 0 |
 | ✅ | `test_backups.test_rotacao_respeitada` | Sem rotação o disco enche e o servidor para. | 0 |
-| ✅ | `test_bot_code.test_codigo_compila` | - | 66 |
-| ✅ | `test_bot_code.test_comandos_registram_em_producao` | - | 41 |
+| ✅ | `test_bot_code.test_codigo_compila` | - | 65 |
+| ✅ | `test_bot_code.test_comandos_registram_em_producao` | - | 40 |
 | ✅ | `test_bot_code.test_nada_definido_depois_do_entrypoint` | DEFEITO REAL: comandos escritos depois de client.run() nunca | 35 |
-| ✅ | `test_bot_code.test_sem_await_em_funcao_sincrona` | DEFEITO REAL: `await` numa função que devolve bool quebrava o | 127 |
-| ✅ | `test_bot_code.test_sem_segredo_escrito_no_codigo` | Token tem de vir do ambiente, não do arquivo. | 34 |
+| ✅ | `test_bot_code.test_sem_await_em_funcao_sincrona` | DEFEITO REAL: `await` numa função que devolve bool quebrava o | 132 |
+| ✅ | `test_bot_code.test_sem_segredo_escrito_no_codigo` | Token tem de vir do ambiente, não do arquivo. | 35 |
 | ✅ | `test_http.test_indice_de_backups_publicado` | - | 4 |
 | ✅ | `test_http.test_pagina_explica_cada_mundo` | Antes era listagem crua de diretório e ninguém sabia o que baixar. | 1 |
 | ✅ | `test_http.test_pagina_inicial_responde` | - | 1 |
 | ✅ | `test_http.test_retomada_de_download` | Range/206: sem isso, queda de internet recomeça o download. | 1 |
 | ✅ | `test_http.test_todos_os_pacotes_publicados_baixam` | - | 4 |
-| ✅ | `test_meta.test_codigo_correto_passa_limpo` | - | 0 |
+| ✅ | `test_meta.test_codigo_correto_passa_limpo` | - | 1 |
 | ✅ | `test_meta.test_acusa_await_em_funcao_sincrona` | Incidente 3: await sobre função que devolve bool. | 0 |
 | ✅ | `test_meta.test_acusa_codigo_depois_do_entrypoint` | Incidente 2: comando definido após o entrypoint. | 0 |
 | ✅ | `test_security.test_ip_privado_e_preservado` | Redigir 127.0.0.1 só atrapalharia a leitura do relatório. | 1 |
@@ -46,8 +46,8 @@
 | ✅ | `test_security.test_whitelist_ligada` | Regressão real: o jogo regerou o server.properties e voltou a | 0 |
 | ✅ | `test_services.test_backup_nao_depende_mais_de_nuvem_externa` | O backup ia para um Drive que estourou a cota e falhava calado. | 0 |
 | ✅ | `test_services.test_exatamente_uma_instancia_de_jogo` | As duas instâncias dividem a porta: nunca podem rodar juntas. | 16 |
-| ✅ | `test_services.test_exclusao_mutua_declarada_nos_dois_sentidos` | Conflicts= precisa existir dos dois lados; só um lado não protege. | 17 |
-| ✅ | `test_services.test_limite_de_memoria_preservado` | Regressão real: apagar um drop-in removeu o MemoryHigh sem aviso. | 8 |
+| ✅ | `test_services.test_exclusao_mutua_declarada_nos_dois_sentidos` | Conflicts= precisa existir dos dois lados; só um lado não protege. | 18 |
+| ✅ | `test_services.test_limite_de_memoria_preservado` | Regressão real: apagar um drop-in removeu o MemoryHigh sem aviso. | 9 |
 | ✅ | `test_services.test_scripts_de_operacao_executaveis` | - | 0 |
 | ✅ | `test_services.test_servicos_de_apoio_ativos` | Bot e servidor de downloads precisam estar sempre no ar. | 14 |
 | ✅ | `test_services.test_timer_de_backup_armado` | - | 7 |
