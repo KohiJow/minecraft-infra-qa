@@ -1,6 +1,6 @@
 {
-  "gerado_em": "2026-11-08T04:37:35",
-  "duracao_s": 30.83,
+  "gerado_em": "2026-11-09T04:38:38",
+  "duracao_s": 28.87,
   "host": "servidor-de-jogos",
   "total": 41,
   "resumo": {
@@ -67,7 +67,7 @@
       "teste": "test_backup_contem_dados_de_jogador",
       "descricao": "Backup sem playerdata não protege o progresso de ninguém.",
       "estado": "passou",
-      "ms": 30403.8,
+      "ms": 28439.6,
       "detalhe": ""
     },
     {
@@ -76,7 +76,7 @@
       "teste": "test_existe_backup_recente",
       "descricao": "Mais de 48h sem backup é falha operacional.",
       "estado": "passou",
-      "ms": 0.3,
+      "ms": 0.4,
       "detalhe": ""
     },
     {
@@ -103,7 +103,7 @@
       "teste": "test_codigo_compila",
       "descricao": "",
       "estado": "passou",
-      "ms": 64.0,
+      "ms": 63.4,
       "detalhe": ""
     },
     {
@@ -112,7 +112,7 @@
       "teste": "test_comandos_registram_em_producao",
       "descricao": "",
       "estado": "passou",
-      "ms": 39.3,
+      "ms": 39.6,
       "detalhe": ""
     },
     {
@@ -121,7 +121,7 @@
       "teste": "test_nada_definido_depois_do_entrypoint",
       "descricao": "DEFEITO REAL: comandos escritos depois de client.run() nunca",
       "estado": "passou",
-      "ms": 33.4,
+      "ms": 33.5,
       "detalhe": ""
     },
     {
@@ -130,7 +130,7 @@
       "teste": "test_sem_await_em_funcao_sincrona",
       "descricao": "DEFEITO REAL: `await` numa função que devolve bool quebrava o",
       "estado": "passou",
-      "ms": 125.5,
+      "ms": 124.9,
       "detalhe": ""
     },
     {
@@ -139,7 +139,7 @@
       "teste": "test_sem_segredo_escrito_no_codigo",
       "descricao": "Token tem de vir do ambiente, não do arquivo.",
       "estado": "passou",
-      "ms": 33.9,
+      "ms": 33.6,
       "detalhe": ""
     },
     {
@@ -166,7 +166,7 @@
       "teste": "test_pagina_inicial_responde",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.9,
+      "ms": 1.0,
       "detalhe": ""
     },
     {
@@ -184,7 +184,7 @@
       "teste": "test_todos_os_pacotes_publicados_baixam",
       "descricao": "",
       "estado": "passou",
-      "ms": 3.7,
+      "ms": 3.6,
       "detalhe": ""
     },
     {
@@ -238,7 +238,7 @@
       "teste": "test_nenhum_arquivo_do_repositorio_contem_segredo",
       "descricao": "O teste que torna seguro publicar isto.",
       "estado": "passou",
-      "ms": 17.8,
+      "ms": 20.8,
       "detalhe": ""
     },
     {
@@ -274,7 +274,7 @@
       "teste": "test_backup_de_mundo_nao_vai_para_nuvem_de_terceiros",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.2,
+      "ms": 0.3,
       "detalhe": ""
     },
     {
@@ -292,7 +292,7 @@
       "teste": "test_pasta_publica_nao_expoe_dado_de_jogador",
       "descricao": "Só pacote de mods e backup podem estar publicados por HTTP.",
       "estado": "passou",
-      "ms": 0.2,
+      "ms": 0.3,
       "detalhe": ""
     },
     {
@@ -319,7 +319,7 @@
       "teste": "test_exatamente_uma_instancia_de_jogo",
       "descricao": "As duas instâncias dividem a porta: nunca podem rodar juntas.",
       "estado": "passou",
-      "ms": 15.1,
+      "ms": 15.7,
       "detalhe": ""
     },
     {
@@ -355,7 +355,7 @@
       "teste": "test_servicos_de_apoio_ativos",
       "descricao": "Bot e servidor de downloads precisam estar sempre no ar.",
       "estado": "passou",
-      "ms": 13.5,
+      "ms": 14.3,
       "detalhe": ""
     },
     {
@@ -364,7 +364,7 @@
       "teste": "test_timer_de_backup_armado",
       "descricao": "",
       "estado": "passou",
-      "ms": 6.7,
+      "ms": 7.3,
       "detalhe": ""
     },
     {
@@ -391,7 +391,7 @@
       "teste": "test_nenhuma_configuracao_aponta_para_mundo_inexistente",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.4,
+      "ms": 0.5,
       "detalhe": ""
     },
     {
