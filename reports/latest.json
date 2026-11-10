@@ -1,6 +1,6 @@
 {
-  "gerado_em": "2026-11-09T04:38:38",
-  "duracao_s": 28.87,
+  "gerado_em": "2026-11-10T04:32:45",
+  "duracao_s": 36.19,
   "host": "servidor-de-jogos",
   "total": 41,
   "resumo": {
@@ -58,7 +58,7 @@
       "teste": "test_arquivos_nao_estao_corrompidos",
       "descricao": "Backup que não abre não é backup.",
       "estado": "passou",
-      "ms": 12.8,
+      "ms": 39.6,
       "detalhe": ""
     },
     {
@@ -67,7 +67,7 @@
       "teste": "test_backup_contem_dados_de_jogador",
       "descricao": "Backup sem playerdata não protege o progresso de ninguém.",
       "estado": "passou",
-      "ms": 28439.6,
+      "ms": 35737.4,
       "detalhe": ""
     },
     {
@@ -76,7 +76,7 @@
       "teste": "test_existe_backup_recente",
       "descricao": "Mais de 48h sem backup é falha operacional.",
       "estado": "passou",
-      "ms": 0.4,
+      "ms": 0.3,
       "detalhe": ""
     },
     {
@@ -103,7 +103,7 @@
       "teste": "test_codigo_compila",
       "descricao": "",
       "estado": "passou",
-      "ms": 63.4,
+      "ms": 62.4,
       "detalhe": ""
     },
     {
@@ -112,7 +112,7 @@
       "teste": "test_comandos_registram_em_producao",
       "descricao": "",
       "estado": "passou",
-      "ms": 39.6,
+      "ms": 39.3,
       "detalhe": ""
     },
     {
@@ -121,7 +121,7 @@
       "teste": "test_nada_definido_depois_do_entrypoint",
       "descricao": "DEFEITO REAL: comandos escritos depois de client.run() nunca",
       "estado": "passou",
-      "ms": 33.5,
+      "ms": 32.5,
       "detalhe": ""
     },
     {
@@ -130,7 +130,7 @@
       "teste": "test_sem_await_em_funcao_sincrona",
       "descricao": "DEFEITO REAL: `await` numa função que devolve bool quebrava o",
       "estado": "passou",
-      "ms": 124.9,
+      "ms": 128.4,
       "detalhe": ""
     },
     {
@@ -139,7 +139,7 @@
       "teste": "test_sem_segredo_escrito_no_codigo",
       "descricao": "Token tem de vir do ambiente, não do arquivo.",
       "estado": "passou",
-      "ms": 33.6,
+      "ms": 34.1,
       "detalhe": ""
     },
     {
@@ -148,7 +148,7 @@
       "teste": "test_indice_de_backups_publicado",
       "descricao": "",
       "estado": "passou",
-      "ms": 3.4,
+      "ms": 3.3,
       "detalhe": ""
     },
     {
@@ -157,7 +157,7 @@
       "teste": "test_pagina_explica_cada_mundo",
       "descricao": "Antes era listagem crua de diretório e ninguém sabia o que baixar.",
       "estado": "passou",
-      "ms": 1.2,
+      "ms": 1.1,
       "detalhe": ""
     },
     {
@@ -166,7 +166,7 @@
       "teste": "test_pagina_inicial_responde",
       "descricao": "",
       "estado": "passou",
-      "ms": 1.0,
+      "ms": 0.9,
       "detalhe": ""
     },
     {
@@ -193,7 +193,7 @@
       "teste": "test_codigo_correto_passa_limpo",
       "descricao": "",
       "estado": "passou",
-      "ms": 0.5,
+      "ms": 0.6,
       "detalhe": ""
     },
     {
@@ -238,7 +238,7 @@
       "teste": "test_nenhum_arquivo_do_repositorio_contem_segredo",
       "descricao": "O teste que torna seguro publicar isto.",
       "estado": "passou",
-      "ms": 20.8,
+      "ms": 18.5,
       "detalhe": ""
     },
     {
@@ -292,7 +292,7 @@
       "teste": "test_pasta_publica_nao_expoe_dado_de_jogador",
       "descricao": "Só pacote de mods e backup podem estar publicados por HTTP.",
       "estado": "passou",
-      "ms": 0.3,
+      "ms": 0.2,
       "detalhe": ""
     },
     {
@@ -319,7 +319,7 @@
       "teste": "test_exatamente_uma_instancia_de_jogo",
       "descricao": "As duas instâncias dividem a porta: nunca podem rodar juntas.",
       "estado": "passou",
-      "ms": 15.7,
+      "ms": 14.6,
       "detalhe": ""
     },
     {
@@ -328,7 +328,7 @@
       "teste": "test_exclusao_mutua_declarada_nos_dois_sentidos",
       "descricao": "Conflicts= precisa existir dos dois lados; só um lado não protege.",
       "estado": "passou",
-      "ms": 16.6,
+      "ms": 19.0,
       "detalhe": ""
     },
     {
@@ -337,7 +337,7 @@
       "teste": "test_limite_de_memoria_preservado",
       "descricao": "Regressão real: apagar um drop-in removeu o MemoryHigh sem aviso.",
       "estado": "passou",
-      "ms": 8.5,
+      "ms": 8.0,
       "detalhe": ""
     },
     {
@@ -355,7 +355,7 @@
       "teste": "test_servicos_de_apoio_ativos",
       "descricao": "Bot e servidor de downloads precisam estar sempre no ar.",
       "estado": "passou",
-      "ms": 14.3,
+      "ms": 14.5,
       "detalhe": ""
     },
     {
@@ -364,7 +364,7 @@
       "teste": "test_timer_de_backup_armado",
       "descricao": "",
       "estado": "passou",
-      "ms": 7.3,
+      "ms": 6.8,
       "detalhe": ""
     },
     {
